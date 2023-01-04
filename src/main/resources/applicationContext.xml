@@ -10,7 +10,8 @@
     <bean id="musicBean"
           class="com.matskevich.newspringcourse.ClassicalMusic"
           init-method="doMyInit"
-          destroy-method="doMyDestroy">
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
     <!--<bean id="musicPlayer"
           class="com.matskevich.newspringcourse.MusicPlayer"
