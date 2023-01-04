@@ -11,7 +11,8 @@
           class="com.matskevich.newspringcourse.ClassicalMusic">
     </bean>
     <bean id="musicPlayer"
-          class="com.matskevich.newspringcourse.MusicPlayer">
+          class="com.matskevich.newspringcourse.MusicPlayer"
+          scope="prototype">
         <property name="music" ref="musicBean"/>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
