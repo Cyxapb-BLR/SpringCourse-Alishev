@@ -8,15 +8,16 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="musicPlayer.properties"/>
     <bean id="musicBean"
-          class="com.matskevich.newspringcourse.ClassicalMusic">
+          class="com.matskevich.newspringcourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
     </bean>
-    <bean id="musicPlayer"
+    <!--<bean id="musicPlayer"
           class="com.matskevich.newspringcourse.MusicPlayer"
           scope="prototype">
         <property name="music" ref="musicBean"/>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-
-    </bean>
+    </bean>-->
 
 </beans>
