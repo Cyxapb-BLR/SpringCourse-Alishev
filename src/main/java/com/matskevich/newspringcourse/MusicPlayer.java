@@ -18,11 +18,13 @@ public class MusicPlayer {
     }
 
     public String playMusic(MusicalGenre musicalGenre) {
+        Random random = new Random();
+        int randomNumber = random.nextInt(3);
         if (musicalGenre.equals(MusicalGenre.CLASSICAL)) {
-            return "Playing: " + music1.getSong();
+            return "Playing: " + music1.getSong().get(randomNumber);
         }
         if (musicalGenre.equals(MusicalGenre.ROCK)) {
-            return "Playing: " + music2.getSong();
+            return "Playing: " + music2.getSong().get(randomNumber);
         }
         return "music not found";
     }
