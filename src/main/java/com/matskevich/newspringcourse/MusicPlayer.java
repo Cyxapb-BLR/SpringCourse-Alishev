@@ -1,22 +1,17 @@
 package com.matskevich.newspringcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MusicPlayer {
-    private ClassicalMusic classicalMusic;
-    private RockMusic rockMusic;
-
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
-    }
+    @Qualifier("rockMusic")
+    //без @Qualifier будет ошибка, т.к. spring не понимает, какой бин создавать rockMusic or classicalMusic
+    private Music music;
 
     public String playMusic() {
-        return "Playing: " + classicalMusic.getSong();
-        /*System.out.println("Playing: " + classicalMusic.getSong());
-        System.out.println("Playing: " + rockMusic.getSong());*/
+        return "Playing: " + music.getSong();
     }
 }
