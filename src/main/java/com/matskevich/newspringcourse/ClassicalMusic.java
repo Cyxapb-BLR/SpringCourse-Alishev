@@ -3,6 +3,7 @@ package com.matskevich.newspringcourse;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Random;
 
 @Component
 public class ClassicalMusic implements Music {
@@ -16,6 +17,7 @@ public class ClassicalMusic implements Music {
     }
 
     public String getSong() {
-        return musicList.get(2);
+        Random random = new Random();
+        return musicList.get(random.nextInt(3));
     }
 }

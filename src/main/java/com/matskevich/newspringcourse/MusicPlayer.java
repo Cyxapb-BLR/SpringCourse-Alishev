@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component
 public class MusicPlayer {
     private Music music1;
@@ -15,7 +17,13 @@ public class MusicPlayer {
         this.music2 = music2;
     }
 
-    public String playMusic() {
-        return "Playing: " + music1.getSong() + ", " + music2.getSong();
+    public String playMusic(MusicalGenre musicalGenre) {
+        if (musicalGenre.equals(MusicalGenre.CLASSICAL)) {
+            return "Playing: " + music1.getSong();
+        }
+        if (musicalGenre.equals(MusicalGenre.ROCK)) {
+            return "Playing: " + music2.getSong();
+        }
+        return "music not found";
     }
 }
