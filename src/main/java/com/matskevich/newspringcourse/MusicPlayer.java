@@ -7,8 +7,13 @@ import org.springframework.stereotype.Component;
 public class MusicPlayer {
     private ClassicalMusic classicalMusic;
 
-    @Autowired
+
     public MusicPlayer(ClassicalMusic classicalMusic) {
+        this.classicalMusic = classicalMusic;
+    }
+
+    @Autowired
+    public void setClassicalMusic(ClassicalMusic classicalMusic) {
         this.classicalMusic = classicalMusic;
     }
 
