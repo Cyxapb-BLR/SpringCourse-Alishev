@@ -1,5 +1,6 @@
-package com.matskevich.newspringcourse;
+package com.matskevich.newspringcourse.genres;
 
+import com.matskevich.newspringcourse.Music;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 

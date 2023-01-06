@@ -1,11 +1,15 @@
-package com.matskevich.newspringcourse;
+package com.matskevich.newspringcourse.config;
 
+import com.matskevich.newspringcourse.*;
+import com.matskevich.newspringcourse.genres.ClassicalMusic;
+import com.matskevich.newspringcourse.genres.RapMusic;
+import com.matskevich.newspringcourse.genres.RockMusic;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Configuration
@@ -28,11 +32,7 @@ public class SpringConfig {
 
     @Bean
     public List<Music> musicGenreList() {
-        List<Music> musicList = new ArrayList<Music>();
-        musicList.add(classicalMusic());
-        musicList.add(rockMusic());
-        musicList.add(rapMusic());
-        return musicList;
+        return Arrays.asList(classicalMusic(), rockMusic(), rapMusic());
     }
 
     @Bean
